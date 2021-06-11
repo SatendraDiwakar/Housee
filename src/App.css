@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&amp;family=Sulphur+Point:wght@300&amp;family=Roboto:wght@100&amp;display=swap');
+/* global reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+section{
+  /*TOP      left*/
+  /*bottom   right*/
+  padding: 3.9rem 0;
+}
+
+header{
+  width: 100%;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: 2000;
+}
+
+img{
+  width: 100%;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.link-route{
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Hero starts */
+.hero {  
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.hero::after {
+  content: '';  
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1250;
+}
+.head {
+  position: absolute;
+  z-index: 1500;
+}
+/* Hero ends */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* logo */
+.logo {
+  width: 12.8rem;
+  margin: 1rem 0;
+}
+.logo{
+  cursor: pointer;
+}
+
+/* nav links */
+.nav-links {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  cursor: pointer;
+}
+.link{  
+  margin: 0 1rem;
+  color: rgb(255, 255, 255);
+}
+.link:hover {
+  color: #c9a570;
+  transition: color 0.5s;
+}
+/* nav links ends */
+
+/* Heading */
+.main-heading{
+  font-family: 'Allura' , cursive;
+  font-size: 9rem;
+  letter-spacing: .5rem;
+  text-transform: capitalize;
+  color: #c59d5f;
+}
+.sub-heading{
+  font-family: "Sulphur Point" , sans-serif;
+  font-size: 2.4rem;
+  letter-spacing: .2rem;
+  color: #fff;
+  line-height: 1.5;
+  margin-top: 1rem;
+}
+.sub-one{
+  margin-left: 15rem;
+}
+.sub-two{
+  margin-left: 24rem;
+}
+/* Heading ends */
+
+/* Carousel */
+.carousel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 5%;
+  bottom: 15%;
+  z-index: 1500;
+}
+.carousel-image{
+  width: 34rem;
+  margin: 0 1rem;
+}
+.carousel-image img{
+  border-radius: 8%;
+  transition: .5s;
+  cursor: pointer;
+}
+.icon-button{
+  font-size: 5rem;
+  border: none;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
