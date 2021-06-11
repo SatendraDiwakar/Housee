@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from './Head'
 
-export default function Hero({hero}){
+export default function Hero({ hero , children }){
 
     let heroImg = {
         
@@ -10,12 +10,7 @@ export default function Hero({hero}){
     }
     return(
         <section className="hero" style={heroImg}>
-            <Head 
-                title="redefining luxury"
-                subHeadingOne="Come , stay with us"
-                subHeadingTwo="And feel the Difference"
-                
-            />
+            {children}
         </section>
     ) 
 }
