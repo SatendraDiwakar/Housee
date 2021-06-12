@@ -6,16 +6,18 @@ import Carousel from '../Components/Carousel'
 import hero from '../images/hero.jpg'
 import Head from '../Components/Head'
 
-export default function Home(){
+export default function Home() {
 
     return <>
         <Navbar />
         <Hero hero={hero}>
-            <Head 
-                title="redefining luxury"
-                subHeadingOne="Come , stay with us"
-                subHeadingTwo="And feel the Difference"        
-            />
+            <div className="container home-container">
+                <Head
+                    title="redefining luxury"
+                    subHeadingOne="Come , stay with us"
+                    subHeadingTwo="And feel the Difference"
+                />
+            </div>
             <Carousel />
         </Hero>
     </>

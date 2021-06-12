@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Allura&amp;family=Sulphur+Point:wght@300&amp;family=Roboto:wght@100&amp;display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Allura&amp;family=Sulphur+Point:wght@300&amp;family=Roboto:wght@100&amp;display=swap");
 /* global reset */
 *,
 *::before,
@@ -8,26 +8,26 @@
   box-sizing: border-box;
 }
 
-html{
+html {
   font-size: 10px;
   scroll-behavior: smooth;
 }
 
-section{
+section {
   /*TOP      left*/
   /*bottom   right*/
   padding: 3.9rem 0;
 }
 
-header{
+header {
   width: 100%;
   position: absolute;
-  top: 20px;
+  top: 0;
   left: 0;
   z-index: 2000;
 }
 
-img{
+img {
   width: 100%;
   max-width: 100%;
 }
@@ -36,7 +36,7 @@ a {
   text-decoration: none;
 }
 
-.link-route{
+.link-route {
   text-decoration: none;
 }
 
@@ -49,7 +49,7 @@ a {
 }
 
 /* Hero starts */
-.hero {  
+.hero {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -59,7 +59,7 @@ a {
   z-index: 1000;
 }
 .hero::after {
-  content: '';  
+  content: "";
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
@@ -81,7 +81,7 @@ a {
   width: 12.8rem;
   margin: 1rem 0;
 }
-.logo{
+.logo {
   cursor: pointer;
 }
 
@@ -94,7 +94,7 @@ a {
   letter-spacing: 0.15rem;
   cursor: pointer;
 }
-.link{  
+.link {
   margin: 0 1rem;
   color: rgb(255, 255, 255);
 }
@@ -105,52 +105,48 @@ a {
 /* nav links ends */
 
 /* Heading */
-.head {
-  z-index: 1500;
-}
-.main-heading{
-  font-family: 'Allura' , cursive;
+.main-heading {
+  font-family: "Allura", cursive;
   font-size: 10rem;
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
   text-transform: capitalize;
   color: #c59d5f;
 }
-.sub-heading{
-  font-family: "Sulphur Point" , sans-serif;
+.sub-heading {
+  font-family: "Sulphur Point", sans-serif;
   font-size: 2.4rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   color: #fff;
   line-height: 1.5;
   margin-top: 1rem;
 }
-.sub-one{
+.sub-one {
   margin-left: 15rem;
 }
-.sub-two{
+.sub-two {
   margin-left: 24rem;
 }
 /* Heading ends */
 
 /* Carousel */
-.carousel{
+.carousel {
   display: flex;
   align-items: center;
   position: absolute;
-  right: 5%;
-  bottom: 15%;
+  right: 2%;
+  bottom: 8%;
   z-index: 1500;
 }
-.carousel-image{
+.carousel-image {
   width: 45rem;
   margin: 0 1rem;
 }
-.carousel-image img{
+.carousel-image img {
   border-radius: 8%;
-  opacity: .9;
-  transition: .5s;
+  opacity: 0.9;
   cursor: pointer;
 }
-.icon-button{
+.icon-button {
   font-size: 5rem;
   border: none;
   background: none;
@@ -161,46 +157,99 @@ a {
 }
 /* carousel ends */
 
-/* About */
-.about-container{
+/* Home */
+.home-container {
   display: flex;
-  align-items:flex-start;
+}
+/* Home ends */
+
+/* House */
+.house-nav{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.house-head{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.house-heading{
+  margin: 3rem 0 1rem;
+
+  font-family: 'Sulphur Point' , sans-serif;
+  font-size: 4rem;
+}
+.line{
+  width: 15rem;
+  height: 2px;
+  background-color: black;
+}
+/* House ends */
+
+
+/* About */
+.about-container {
+  display: flex;
+  align-items: flex-start;
   justify-content: space-between;
   margin-top: 18rem;
 }
-.about-description{
+.about-description {
   width: 75rem;
   margin-top: 5rem;
-  font-family: 'Sulphur Point' , sans-serif;
+  font-family: "Sulphur Point", sans-serif;
   font-size: 1.8rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   color: rgba(255, 255, 255, 0.8);
 }
-.highlyt{
-  font-family: 'Allura' , cursive;
+.highlyt {
+  font-family: "Allura", cursive;
   font-size: 2.5rem;
   color: #e7b974;
 }
 /* About ends */
 
 /* Contact */
-.contact{
-  height: 100vh;
-  width: 100%;
-  background-color: #1379cc;
-}
-.contact .highlyt{
-  color: #fff;
-}
-.contact-container{
+.contact-container {
+  margin-top: 15rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
-.box{
-  width: 100px;
-  height: 100px;
-  background-color: #fff;
+.contact-head {
+  margin-bottom: 14rem;
+}
+.contact-form-container {
+  margin: 26rem 0 4rem;
+}
+.msg-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.msg-input {
+  width: 35rem;
+  height: 3rem;
+  display: inline-block;
+  margin: 1rem;
+  font-size: 1.6rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.text-area {
+  width: 35rem;
+  margin: 1rem;
+  text-align: center;
+  font-size: 1.6rem;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.msg-btn {
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.msg-btn:hover {
+  color: #fcb54c;
+  transition: 0.5s color;
 }
 /* Contact ends */
-
