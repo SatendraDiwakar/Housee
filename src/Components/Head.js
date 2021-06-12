@@ -8,7 +8,7 @@ export default function Head({title , subHeadingOne , subHeadingTwo }){
         letterSpacing: ".3rem"
     }
     return(        
-        <div className="container head">
+        <div className=" head">
             <div>
                 <div className="main-heading">{title}</div>
                 <div className="sub-heading">

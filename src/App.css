@@ -45,6 +45,7 @@ a {
   max-width: 130rem;
   margin: 0 auto;
   padding: 0 2rem;
+  z-index: 1500;
 }
 
 /* Hero starts */
@@ -105,7 +106,6 @@ a {
 
 /* Heading */
 .head {
-  position: absolute;
   z-index: 1500;
 }
 .main-heading{
@@ -162,16 +162,19 @@ a {
 /* carousel ends */
 
 /* About */
+.about-container{
+  display: flex;
+  align-items:flex-start;
+  justify-content: space-between;
+  margin-top: 18rem;
+}
 .about-description{
   width: 75rem;
+  margin-top: 5rem;
   font-family: 'Sulphur Point' , sans-serif;
   font-size: 1.8rem;
   letter-spacing: .2rem;
   color: rgba(255, 255, 255, 0.8);
-  z-index: 1500;
-  position: absolute;
-  right: 10%;
-  top: 40%;
 }
 .highlyt{
   font-family: 'Allura' , cursive;
@@ -179,6 +182,7 @@ a {
   color: #e7b974;
 }
 /* About ends */
+
 /* Contact */
 .contact{
   height: 100vh;
@@ -187,6 +191,16 @@ a {
 }
 .contact .highlyt{
   color: #fff;
+}
+.contact-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.box{
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
 }
 /* Contact ends */
 

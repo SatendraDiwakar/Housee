@@ -10,11 +10,14 @@ export default function Contact(){
     return <div className="contact">
         <Navbar />
         <Hero hero={hero2}>
-            <Head 
-                title="contact" 
-                subHeadingOne="We would love to here from you."
-                subHeadingTwo="Team Housee"
-            />
+            <div className="container contact-container">
+                <Head 
+                    title="contact" 
+                    subHeadingOne="We would love to here from you."
+                    subHeadingTwo="Team Housee"
+                />
+                <div className="box">sdadsdad</div>
+            </div>
         </Hero>
 
     </div>
