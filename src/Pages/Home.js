@@ -1,10 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
 import Navbar from '../Components/Navbar'
 import Hero from '../Components/Hero'
 import Carousel from '../Components/Carousel'
-import hero from '../images/hero.jpg'
 import Head from '../Components/Head'
+
+import hero from '../images/homeHero.jpg'
 
 export default function Home() {
 
@@ -18,7 +19,7 @@ export default function Home() {
                     subHeadingTwo="And feel the Difference"
                 />
             </div>
-            <Carousel />
+            <Carousel interior="1" />
         </Hero>
     </>
 }

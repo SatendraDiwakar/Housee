@@ -1,5 +1,7 @@
 import React from "react";
-import hero2 from "../images/hero2.jpg";
+
+import hero from "../images/aboutHero.jpg";
+
 import Hero from "../Components/Hero";
 import Navbar from "../Components/Navbar";
 import Head from "../Components/Head";
@@ -8,7 +10,7 @@ export default function About() {
   return (
     <div className="about">
       <Navbar />
-      <Hero hero={hero2}>
+      <Hero hero={hero}>
         <div className="container about-container">
 
           <Head title="about us" />

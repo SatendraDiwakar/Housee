@@ -168,6 +168,7 @@ a {
   background-color: rgba(0, 0, 0, 0.5);
 }
 .house-head{
+  margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -184,13 +185,20 @@ a {
   background-color: black;
 }
 .houses{
-  height: 80rem;
+  width: 100%;
+  position: relative;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items:center;
+  gap: 6rem;
+  justify-content: center;
 }
 /* Houses ends */
 
 /* House Card */
 .card{
-  position: absolute;
+  position: relative;
   width: 40rem;
   height: 27rem;
   font-family: 'Sulphur Point' , sans-serif;

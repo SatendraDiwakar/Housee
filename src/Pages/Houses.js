@@ -2,10 +2,11 @@ import React from 'react'
 import Navbar from '../Components/Navbar'
 import House from '../Components/House'
 
-import houseHero from '../images/houses/houseHero.jpg'
-import house1 from '../images/houses/house-3.jpg'
+import houseHero from '../images/houseHero.jpg'
 
 export default function Houses() {
+
+    const itm = [0,1,2,3,4,5]
 
     const heroHouse = {
         height: "70vh",
@@ -22,12 +23,17 @@ export default function Houses() {
             <div className="line"></div>
         </div>
         <div className="houses">
-            <House
-                houseImage={house1}
-                houseType="Deluxe"
-                rentPrice="$600/"
-                rating="4.9"
-            />
+            {itm.map(item=>{
+                return <House
+                    key={item}
+                    houseImage={houseHero}
+                    houseType="Deluxe"
+                    rentPrice="$600/"
+                    rating="4.9"
+                    item={item}
+                />
+            })}
+            
         </div>
     </div>
 }

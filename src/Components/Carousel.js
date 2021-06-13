@@ -3,15 +3,18 @@ import { FaAngleLeft , FaAngleRight } from 'react-icons/fa'
 
 import { HouseContext } from '../Context'
 
-export default function Carousel(){
+export default function Carousel({interior}){
    
     const [i,setI] = useState(0);
     
     const context = useContext(HouseContext);
-    const images = context;
+    console.log(context);
+    const {interiors} = context;
+    const inter = interiors[interior];
+    
    
     function up(){
-        if(i >= 0 && i < (images.length-1)){
+        if(i >= 0 && i < (inter.length-1)){
             setI(prevI=>prevI+1)
         }else{
             setI(0)
@@ -20,10 +23,10 @@ export default function Carousel(){
     
 
     function down(){
-        if(i>0 && i <= images.length){
+        if(i>0 && i <= inter.length){
             setI(prevI=>prevI-1)
         }else{
-            setI(images.length-1)
+            setI(inter.length-1)
         }
     }
 
@@ -37,7 +40,7 @@ export default function Carousel(){
             <button className="icon-button" onClick={up}><FaAngleLeft /></button>
             <div className="carousel-image">
                 <img 
-                    src={images[i]} alt="Featured House"
+                    src={inter[i]} alt="Featured House"
                     // onMouseOver={()=>clearTimeout(timer)}
                     // onMouseOut={()=>{timer = setTimeout(up,3000)}}    
                 />

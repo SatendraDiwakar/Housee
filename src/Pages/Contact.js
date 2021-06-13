@@ -1,6 +1,7 @@
 import React from 'react'
 
-import hero2 from '../images/hero2.jpg'
+import hero from '../images/contactHero.jpg'
+
 import Hero from '../Components/Hero'
 import Navbar from '../Components/Navbar'
 import Head from '../Components/Head'
@@ -10,7 +11,7 @@ export default function Contact(){
 
     return <div className="contact">
         <Navbar />
-        <Hero hero={hero2}>
+        <Hero hero={hero}>
             <div className="container contact-container">
                 <div className="contact-head">
                     <Head 
