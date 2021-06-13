@@ -50,6 +50,7 @@ export default {
       houseImage: house1,
       name: "single economy",
       price: 900,
+      rating: 4.9,
       pets: true,
       breakfast: true,
       description:
@@ -69,6 +70,7 @@ export default {
       houseImage: house2,
       name: "single economy",
       price: 700,
+      rating: 4.7,
       pets: true,
       breakfast: true,
       description:
@@ -88,6 +90,7 @@ export default {
       houseImage: house3,
       name: "single economy",
       price: 800,
+      rating: 4.8,
       pets: false,
       breakfast: false,
       description:
@@ -107,6 +110,7 @@ export default {
       houseImage: house4,
       name: "single economy",
       price: 700,
+      rating: 4.6,
       pets: false,
       breakfast: false,
       description:
@@ -126,6 +130,7 @@ export default {
       houseImage: house5,
       name: "single economy",
       price: 900,
+      rating: 4.8,
       pets: true,
       breakfast: true,
       description:
@@ -145,6 +150,7 @@ export default {
       houseImage: house6,
       name: "single economy",
       price: 600,
+      rating: 4.9,
       pets: false,
       breakfast: false,
       description:
@@ -164,6 +170,7 @@ export default {
       houseImage: house7,
       name: "single economy",
       price: 700,
+      rating: 4.6,
       pets: true,
       breakfast: true,
       description:
@@ -183,6 +190,7 @@ export default {
       houseImage: house8,
       name: "single economy",
       price: 800,
+      rating: 4.5,
       pets: true,
       breakfast: true,
       description:
@@ -202,6 +210,7 @@ export default {
       houseImage: house9,
       name: "single economy",
       price: 600,
+      rating: 4.7,
       pets: false,
       breakfast: false,
       description:
@@ -221,6 +230,7 @@ export default {
       houseImage: house10,
       name: "single economy",
       price: 1000,
+      rating: 4.9,
       pets: true,
       breakfast: true,
       description:
@@ -240,6 +250,7 @@ export default {
       houseImage: house11,
       name: "single economy",
       price: 1000,
+      rating: 4.8,
       pets: true,
       breakfast: true,
       description:
@@ -259,6 +270,7 @@ export default {
       houseImage: house12,
       name: "single economy",
       price: 700,
+      rating: 4.6,
       pets: false,
       breakfast: false,
       description:
@@ -278,6 +290,7 @@ export default {
       houseImage: house13,
       name: "single economy",
       price: 800,
+      rating: 4.8,
       pets: false,
       breakfast: false,
       description:
@@ -297,6 +310,7 @@ export default {
       houseImage: house14,
       name: "single economy",
       price: 700,
+      rating: 4.9,
       pets: false,
       breakfast: false,
       description:
@@ -316,6 +330,7 @@ export default {
       houseImage: house15,
       name: "single economy",
       price: 1000,
+      rating: 4.5,
       pets: true,
       breakfast: true,
       description:
@@ -335,6 +350,7 @@ export default {
       houseImage: house16,
       name: "single economy",
       price: 1000,
+      rating: 4.6,
       pets: true,
       breakfast: true,
       description:
@@ -354,6 +370,7 @@ export default {
       houseImage: house17,
       name: "single economy",
       price: 1000,
+      rating: 4.7,
       pets: true,
       breakfast: true,
       description:
@@ -373,6 +390,7 @@ export default {
       houseImage: house18,
       name: "single economy",
       price: 800,
+      rating: 4.9,
       pets: true,
       breakfast: true,
       description:
@@ -392,6 +410,7 @@ export default {
       houseImage: house19,
       name: "single economy",
       price: 1000,
+      rating: 4.8,
       pets: true,
       breakfast: true,
       description:
@@ -411,6 +430,7 @@ export default {
       houseImage: house20,
       name: "single economy",
       price: 900,
+      rating: 4.7,
       pets: false,
       breakfast: false,
       description:
@@ -430,6 +450,7 @@ export default {
       houseImage: house21,
       name: "single economy",
       price: 700,
+      rating: 4.5,
       pets: true,
       breakfast: true,
       description:

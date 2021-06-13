@@ -8,7 +8,7 @@ export default function Carousel({interior}){
     const [i,setI] = useState(0);
     
     const context = useContext(HouseContext);
-    console.log(context);
+    // console.log(context);
     const {interiors} = context;
     const inter = interiors[interior];
     

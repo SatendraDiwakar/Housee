@@ -19,7 +19,7 @@ export default function Home() {
                     subHeadingTwo="And feel the Difference"
                 />
             </div>
-            <Carousel interior="1" />
+            {/* <Carousel interior="1" /> */}
         </Hero>
     </>
 }
