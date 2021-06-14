@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import Navbar from '../Components/Navbar'
 import House from '../Components/House'
+import Loader from '../Components/Loader/Loader'
 
 import { HouseContext } from '../Context'
 
@@ -9,13 +10,16 @@ import houseHero from '../images/houseHero.jpg'
 export default function Houses() {
 
     const contextData = useContext(HouseContext);
-    const {houses} = contextData;
-    console.log(contextData);
+    const {houses,loading} = contextData;
 
     const heroHouse = {
         height: "70vh",
         background: `url("${houseHero}") center no-repeat fixed`,
         backgroundSize: "cover"
+    }
+
+    if(loading){
+        return <Loader />
     }
 
     return <div>

@@ -8,6 +8,7 @@ export const HouseContext = createContext(null);
 export default function HouseProvider({children}){
 
     const [dataState, setDataState] = useState();
+    const [loading,setLoading] = useState(true);
 
     function getData(items){
         let tempItems = items.houses.map(itm=>{
@@ -43,10 +44,11 @@ export default function HouseProvider({children}){
         const houses = getData(data);
         // console.log(houses);
         const interiors = data.interiors;
+        setLoading(false);
         setDataState({houses,interiors});
     },[])
     
-    return <HouseContext.Provider value={dataState}>
+    return <HouseContext.Provider value={{...dataState , loading}}>
         {children}
     </HouseContext.Provider>
 
