@@ -4,7 +4,7 @@ import logo from '../images/logo.png'
 import NavLinks from './NavLinks'
 
 export default function Navbar({housesStyle}){
-    const links = ['/' , 'Our-Houses' , 'About' , 'Contact']
+    const links = ['/' , 'houses' , 'about' , 'contact']
     return(        
         <header className={housesStyle}>
             <div className="container">

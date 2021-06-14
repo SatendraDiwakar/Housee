@@ -1,32 +1,35 @@
-import React, { useState , useContext, useEffect } from 'react'
-import { FaAngleLeft , FaAngleRight } from 'react-icons/fa'
+import React, { useState, useContext, useEffect } from 'react'
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 
 import { HouseContext } from '../Context'
 
-export default function Carousel({interior}){
-   
-    const [i,setI] = useState(0);
-    
-    const context = useContext(HouseContext);
-    // console.log(context);
-    const {interiors} = context;
+export default function Carousel({ interior , carouStyle }) {
+
+    const [i, setI] = useState(0);
+
+    const contextData = useContext(HouseContext);
+    const { interiors } = contextData;
     const inter = interiors[interior];
-    
-   
-    function up(){
-        if(i >= 0 && i < (inter.length-1)){
-            setI(prevI=>prevI+1)
-        }else{
+
+    if(!carouStyle){
+        carouStyle= "";
+    }
+
+
+    function up() {
+        if (i >= 0 && i < (inter.length - 1)) {
+            setI(prevI => prevI + 1)
+        } else {
             setI(0)
         }
     }
-    
 
-    function down(){
-        if(i>0 && i <= inter.length){
-            setI(prevI=>prevI-1)
-        }else{
-            setI(inter.length-1)
+
+    function down() {
+        if (i > 0 && i <= inter.length) {
+            setI(prevI => prevI - 1)
+        } else {
+            setI(inter.length - 1)
         }
     }
 
@@ -35,16 +38,16 @@ export default function Carousel({interior}){
     //         return time;
     // },[i,up])
 
-    return(
+    return (
         <div className="carousel">
             <button className="icon-button" onClick={up}><FaAngleLeft /></button>
-            <div className="carousel-image">
-                <img 
+            <div className={`carousel-image ${carouStyle}`}>
+                <img
                     src={inter[i]} alt="Featured House"
-                    // onMouseOver={()=>clearTimeout(timer)}
-                    // onMouseOut={()=>{timer = setTimeout(up,3000)}}    
+                // onMouseOver={()=>clearTimeout(timer)}
+                // onMouseOut={()=>{timer = setTimeout(up,3000)}}    
                 />
-            </div> 
+            </div>
             <button className="icon-button" onClick={down}><FaAngleRight /></button>
         </div>
     )

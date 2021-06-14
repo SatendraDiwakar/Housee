@@ -7,17 +7,32 @@ export const HouseContext = createContext(null);
 
 export default function HouseProvider({children}){
 
-    const [stateData, setStateData] = useState();
+    const [dataState, setDataState] = useState();
 
-    function formatData(items){
+    function getData(items){
         let tempItems = items.houses.map(itm=>{
             let id = itm.id;
             let houseImage = itm.houseImage;
             let houseType = itm.name;
             let price = itm.price;
             let rating = itm.rating;
+            let {
+                pets,
+                breakfast,
+                description,
+                extras} = itm;
 
-            let house = {id,houseImage,houseType,price,rating};
+            let house = {
+                id,                
+                houseImage,
+                houseType,
+                price,
+                rating,
+                pets,
+                breakfast,
+                description,
+                extras
+            };
 
             return house;
         });
@@ -25,12 +40,13 @@ export default function HouseProvider({children}){
     }
 
     useEffect(()=>{
-        const houses = formatData(data);
+        const houses = getData(data);
         // console.log(houses);
-        setStateData(houses)
+        const interiors = data.interiors;
+        setDataState({houses,interiors});
     },[])
     
-    return <HouseContext.Provider value={stateData}>
+    return <HouseContext.Provider value={dataState}>
         {children}
     </HouseContext.Provider>
 

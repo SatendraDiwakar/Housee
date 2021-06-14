@@ -7,6 +7,8 @@ export default function NavLinks({links}){
         {links.map((item,index)=>{
             if(item === '/'){
                 return <Link to={`${item}`} key={index} className="link">Home</Link>
+            }else if(item === 'houses'){
+                return <Link to={`/${item}/`} key={index} className="link">Our-Houses</Link>
             }
             return <Link to={`/${item}/`} key={index} className="link">{item}</Link>
         })}

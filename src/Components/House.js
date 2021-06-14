@@ -1,17 +1,17 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';
 
 export default function House({ houseImage, houseType, rentPrice, rating, itemNo }) {
 
-    itemNo = parseInt(itemNo) - 1;
+    itemNo = parseInt(itemNo);
 
     return (
         <div className="card"
             onMouseOver={() => {
-                document.getElementsByClassName("small-detail")[itemNo].classList.remove("hide")
+                document.getElementsByClassName("small-detail")[itemNo-1].classList.remove("hide")
             }}
             onMouseOut={() => {
-                document.getElementsByClassName("small-detail")[itemNo].classList.add("hide")
+                document.getElementsByClassName("small-detail")[itemNo-1].classList.add("hide")
             }}
         >
 
@@ -29,8 +29,8 @@ export default function House({ houseImage, houseType, rentPrice, rating, itemNo
                         <p className="price">Cost</p>
                         <p>{`$${rentPrice}`}<span className="pn">/night</span></p>
                     </div>
-                    <div className="od">
-                        <button className="features">Features</button>
+                    <div className="od od-btn">
+                        <Link to={`/houses/${itemNo}/`} className="btn" >Features</Link>
                     </div>
                 </div>
             </div>

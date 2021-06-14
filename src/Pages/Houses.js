@@ -9,10 +9,8 @@ import houseHero from '../images/houseHero.jpg'
 export default function Houses() {
 
     const contextData = useContext(HouseContext);
-
+    const {houses} = contextData;
     console.log(contextData);
-
-    const itm = [0,1,2,3,4,5]
 
     const heroHouse = {
         height: "70vh",
@@ -25,11 +23,11 @@ export default function Houses() {
             <Navbar housesStyle="house-nav" />
         </div>
         <div className="house-head">
-            <div className="house-heading">Find your place</div>
+            <div className="house-heading">Find your housee</div>
             <div className="line"></div>
         </div>
         <div className="houses">
-            {contextData.map(item=>{
+            {houses.map(item=>{
                 return <House
                     key={item.id}
                     houseImage={item.houseImage}

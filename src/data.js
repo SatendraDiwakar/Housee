@@ -41,9 +41,27 @@ import room7 from './images/interior/room-7.jpeg'
 import room8 from './images/interior/room-8.jpeg'
 import room9 from './images/interior/room-9.jpeg'
 import room10 from './images/interior/room-10.jpeg'
-import room11 from './images/interior/room-11.jpeg'
 
 export default {
+  /* interior data */
+  interiors: [
+    [
+      room1, room2, gal1, details1
+    ],
+    [
+      room3, room4, gal2, gal6, details2
+    ],
+    [
+      room5, room6, gal3, details1
+    ],
+    [
+      room7, room8, gal4, details2
+    ],
+    [
+      room9, room10, gal5, gal7, details1
+    ]
+  ],
+  /* house data */
   houses: [
     {
       id: "1",
@@ -466,23 +484,4 @@ export default {
       ],
     }
   ],
-
-  interiors: [
-    [
-      room11, room1, room2, gal1, details1
-    ],
-    [
-      room3, room4, gal2, gal6, details2
-    ],
-    [
-      room5, room6, gal3, details1
-    ],
-    [
-      room7, room8, gal4, details2
-    ],
-    [
-      room9, room10, gal5, gal7, details1
-    ]
-  ]
-
 };

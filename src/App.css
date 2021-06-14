@@ -70,6 +70,7 @@ a {
 }
 /* Hero ends */
 
+/* nav */
 .nav {
   display: flex;
   justify-content: space-between;
@@ -118,7 +119,6 @@ a {
   letter-spacing: 0.2rem;
   color: #fff;
   line-height: 1.5;
-  margin-top: 1rem;
 }
 .sub-one {
   margin-left: 15rem;
@@ -138,12 +138,15 @@ a {
   z-index: 1500;
 }
 .carousel-image {
-  width: 45rem;
   margin: 0 1rem;
 }
-.carousel-image img {
-  border-radius: 8%;
-  opacity: 0.9;
+.carousel-image > img {
+  width: 45rem;
+  height: 25rem;
+  background: rgb(32, 27, 51) center no-repeat;
+  background-size: cover;
+  border: rgb(32, 27, 51) 5px solid;
+  border-radius: 20px;
   cursor: pointer;
 }
 .icon-button {
@@ -154,6 +157,9 @@ a {
   cursor: pointer;
   display: flex;
   justify-content: center;
+}
+.home-carousel{
+  opacity: .9;
 }
 /* carousel ends */
 
@@ -245,32 +251,105 @@ a {
   padding: 0 2rem;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
+}
+.od-btn {
+  display: flex;
+  justify-content: center;
 }
 .pn{
   font-size: 1.5rem;
   letter-spacing: 0;
 }
-.features{
+.btn{
   width: 160px;
   height: 40px;
-  margin: 1rem auto;
+  margin-top: 1rem;
   font-family: sans-serif;
   font-size: 3rem;
+  text-align: center;
   background: #8d7d7b;
   border: #fff 2px solid;
   border-radius: 6px;
   color: black;
   cursor: pointer;
 }
-.features:hover{
+.btn:hover{
   color: #c59d5f;
   border: #c59d5f 2px solid;
   background: transparent;
 }
 /* House Card ends */
 
+/* Single House */
+.singHouHero{
+  height: 100vh;
+}
+.single-house{
+  display: flex;
+  align-items: flex-end;
+}
+.single-house-head{
+  padding: 1rem;
+  margin-bottom: 3.5rem;
+  margin-left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.65);
+}
+.tagline{
+  font-size: 8rem;
+  text-transform: none;
+  margin-bottom: 1rem;
+}
+.single-house-head > .line{
+  background-color: #c59d5f;
+  margin-bottom: 1rem;
+}
+.single-house-head > .btn{
+  margin: 1rem 0;
+}
+.details-container{
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.details-type{
+  margin-bottom: 2rem;
+  font-family: 'Sulphur Point' , sans-serif;
+  font-size: 5rem;
+  letter-spacing: .2rem;
+  color: #000;
+}
+.content{
+  width: 50rem;
+}
+.content > p{
+  margin-bottom: 1rem;
+  font-family: 'Sulphur Point' , sans-serif;
+  font-size: 2rem;
+  letter-spacing: .2rem;
+  color: #000;
+}
+.extra-container{
+  margin-bottom: 5rem;
+}
+.extras{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 15rem;
+  justify-content: flex-start;
+  font-family: 'Sulphur Point' , sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: .2rem;
+  color: #000;
+}
+.extras > li{
+  width: 43rem;
+  list-style: none;
+}
+/* Single House ends */
 
 /* About */
 .about-container {
