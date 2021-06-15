@@ -16,7 +16,7 @@ export default function House({ houseImage, houseType, rentPrice, rating, itemNo
         >
 
             <div className="card-img">
-                <img src={houseImage} alt="House-Image" />
+                <img src={houseImage} alt="HouseImage" />
             </div>
             <div className="house-detail">
                 <h1 className="house-type">{houseType}</h1>

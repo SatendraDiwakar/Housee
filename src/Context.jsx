@@ -1,7 +1,7 @@
 import React , {createContext, useEffect, useState}  from 'react'
 
 
-import data from './data'
+import {data} from './data'
 
 export const HouseContext = createContext(null);
 

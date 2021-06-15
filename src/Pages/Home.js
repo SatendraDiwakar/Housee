@@ -13,14 +13,18 @@ import hero from '../images/homeHero.jpg'
 export default function Home() {
 
     const contextData = useContext(HouseContext);
-    const {houses,loading} = contextData 
+    const { houses, loading } = contextData
+
     let id;
-    console.log(contextData);
-    if(!loading){
-        id = contextData.houses[12].id
-        id = parseInt(id) % 5
+    if (!loading) {
+        id = parseInt(houses[12].id) % 5;
+    }
+
+    if (loading) {
+        return <Loader />
     }
     return <>
+        <Loader />
         <Navbar />
         <Hero hero={hero}>
             <div className="container home-container">
@@ -30,9 +34,7 @@ export default function Home() {
                     subHeadingTwo="And feel the Difference"
                 />
             </div>
-            {
-                loading?<Loader/>:<Carousel interior={id} carouStyle="home-carousel" />
-            }
+            {loading ? <Loader /> : <Carousel interior={id} carouStyle="home-carousel" />}
         </Hero>
     </>
 }

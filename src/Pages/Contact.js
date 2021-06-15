@@ -6,10 +6,12 @@ import Hero from '../Components/Hero'
 import Navbar from '../Components/Navbar'
 import Head from '../Components/Head'
 import ContactForm from '../Components/ContactForm'
+import Loader from '../Components/Loader/Loader'
 
 export default function Contact(){
 
     return <div className="contact">
+        <Loader/>
         <Navbar />
         <Hero hero={hero}>
             <div className="container contact-container">
@@ -25,6 +27,5 @@ export default function Contact(){
                 </div>
             </div>
         </Hero>
-
     </div>
 }

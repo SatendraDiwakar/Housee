@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 
 import { HouseContext } from '../Context'

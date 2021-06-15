@@ -42,7 +42,7 @@ import room8 from './images/interior/room-8.jpeg'
 import room9 from './images/interior/room-9.jpeg'
 import room10 from './images/interior/room-10.jpeg'
 
-export default {
+export const data = {
   /* interior data */
   interiors: [
     [

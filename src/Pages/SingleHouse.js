@@ -6,27 +6,28 @@ import { Link } from 'react-router-dom'
 import { HouseContext } from '../Context'
 
 export default function Singlehouse({ match }) {
-
+    window.scrollTo(0, 0);
     const contextData = useContext(HouseContext);
-    const { houses, loading } = contextData;
+    const { houses,loading } = contextData;
+
     let id;
     let heroHouse;
 
-    
-    if (loading) {
-        return <Loader />
-    } else {
-        window.scrollTo(0, 0);
+    if (!loading) {
         id = parseInt(match.params.id) - 1;
-        const singleHouseHero = houses[id].houseImage;
-
         heroHouse = {
             height: "80vh",
-            background: `url("${singleHouseHero}") center no-repeat fixed`,
+            background: `url("${houses[id].houseImage}") center no-repeat fixed`,
             backgroundSize: "cover"
         }
     }
+
+
+    if (loading) {
+        return <Loader />
+    }
     return <div>
+        <Loader/>
         <div className="singHouHero">
             <div style={heroHouse} className="single-house">
                 <Navbar housesStyle="house-nav" />

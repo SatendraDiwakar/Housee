@@ -5,10 +5,12 @@ import hero from "../images/aboutHero.jpg";
 import Hero from "../Components/Hero";
 import Navbar from "../Components/Navbar";
 import Head from "../Components/Head";
+import Loader from "../Components/Loader/Loader";
 
 export default function About() {
   return (
     <div className="about">
+      <Loader/>
       <Navbar />
       <Hero hero={hero}>
         <div className="container about-container">

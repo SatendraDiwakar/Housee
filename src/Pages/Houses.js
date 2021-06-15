@@ -10,19 +10,20 @@ import houseHero from '../images/houseHero.jpg'
 export default function Houses() {
 
     const contextData = useContext(HouseContext);
-    const {houses,loading} = contextData;
+    const { houses, loading } = contextData;
 
     const heroHouse = {
-        height: "70vh",
+        height: "80vh",
         background: `url("${houseHero}") center no-repeat fixed`,
         backgroundSize: "cover"
     }
 
-    if(loading){
+
+    if (loading) {
         return <Loader />
     }
-
     return <div>
+        <Loader/>
         <div style={heroHouse}>
             <Navbar housesStyle="house-nav" />
         </div>
@@ -31,7 +32,7 @@ export default function Houses() {
             <div className="line"></div>
         </div>
         <div className="houses">
-            {houses.map(item=>{
+            {houses.map(item => {
                 return <House
                     key={item.id}
                     houseImage={item.houseImage}
@@ -40,7 +41,8 @@ export default function Houses() {
                     rating={item.rating}
                     itemNo={item.id}
                 />
-            })}            
+            })}
         </div>
     </div>
+
 }
