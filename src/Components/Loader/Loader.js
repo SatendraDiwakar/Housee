@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import logo from './logo.png'
+import { RiHomeLine } from 'react-icons/all'
+
 import './loader.css'
 
 export default function Loader() {
@@ -6,7 +9,7 @@ export default function Loader() {
     const [unload, setUnload] = useState();
     const [firstTime, setFirstTime] = useState(true);
 
-    if(firstTime){
+    if (firstTime) {
         document.getElementsByTagName('html')[0].style.overflowY = "hidden";
     }
     useEffect(() => {
@@ -26,6 +29,9 @@ export default function Loader() {
     }, [])
 
     return <div className="loader" style={unload}>
-        <div className="circle rotate"></div>
+        <div className="circle rotate">
+        </div>
+        {<RiHomeLine className="home" />}
+
     </div>
 }
