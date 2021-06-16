@@ -1,16 +1,25 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-export default function NavLinks({links}){
+export default function NavLinks({ links }) {
+
     
-    return <div className="nav-links">        
-        {links.map((item,index)=>{
-            if(item === '/'){
-                return <Link to={`${item}`} key={index} className="link">Home</Link>
-            }else if(item === 'houses'){
-                return <Link to={`/${item}/`} key={index} className="link">Our-Houses</Link>
+
+
+    return <div className="nav-links">
+        {links.map((item, index) => {
+            if (item === '/') {
+                return <NavLink to={`${item}`} key={index} activeStyle={{
+                    borderBottom: "#ffb950 2px solid"
+                }} exact className="link">Home</NavLink>
+            } else if (item === 'houses') {
+                return <NavLink to={`/${item}/`} key={index} activeStyle={{
+                    borderBottom: "#ffb950 2px solid"
+                }} className="link">Our-Houses</NavLink>
             }
-            return <Link to={`/${item}/`} key={index} className="link">{item}</Link>
+            return <NavLink to={`/${item}/`} key={index} activeStyle={{
+                borderBottom: "#ffb950 2px solid"
+            }} className="link">{item}</NavLink>
         })}
     </div>
 }

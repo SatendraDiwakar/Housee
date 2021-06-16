@@ -2,15 +2,35 @@ import React from 'react'
 import Logo from './Logo'
 import logo from '../images/logo.png'
 import NavLinks from './NavLinks'
+import {FiMenu} from 'react-icons/fi'
+import {MdClose} from 'react-icons/md'
 
-export default function Navbar({housesStyle}){
-    const links = ['/' , 'houses' , 'about' , 'contact']
-    return(        
+export default function Navbar({ housesStyle }) {
+    const links = ['/', 'houses', 'about', 'contact']
+    return (
         <header className={housesStyle}>
             <div className="container">
                 <nav className="nav">
                     <Logo logo={logo} />
                     {/* menu-toggle */}
+                    <div className="menu">
+                        <FiMenu 
+                            className="menu-toggle" 
+                            onClick={()=>{
+                                document.getElementsByClassName('menu-toggle')[0].style.display = "none"
+                                document.getElementsByClassName('menu-close')[0].style.display = "block"
+
+                            }}
+                        />
+                        <MdClose
+                            className="menu-close"
+                            onClick={()=>{
+                                document.getElementsByClassName('menu-toggle')[0].style.display = "block"
+                                document.getElementsByClassName('menu-close')[0].style.display = "none"
+
+                            }}
+                        />
+                    </div>
                     <NavLinks links={links} />
                 </nav>
             </div>

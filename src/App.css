@@ -87,6 +87,21 @@ a {
   cursor: pointer;
 }
 
+/* menu toggler */
+.menu {
+  display: none;
+  font-size: 4.5rem;
+  position: absolute;
+  right: 8%;
+  background: transparent;
+  color: #fff;
+  z-index: 2500;
+}
+.menu-close{
+  display: none;
+  color: rgb(255, 38, 0);
+}
+
 /* nav links */
 .nav-links {
   font-family: "Roboto", sans-serif;
@@ -97,14 +112,16 @@ a {
   cursor: pointer;
 }
 .link {
+  padding: 0 5px 5px;
   margin: 0 1rem;
+  text-align: center;
   color: rgb(255, 255, 255);
 }
 .link:hover {
   color: #c9a570;
   transition: color 0.5s;
 }
-/* nav links ends */
+/* nav ends */
 
 /* Heading */
 .main-heading {
@@ -142,8 +159,8 @@ a {
   margin: 0 1rem;
 }
 .carousel-image > img {
-  width: 45rem;
-  height: 25rem;
+  width: 40rem;
+  height: 22rem;
   background: rgb(32, 27, 51) center no-repeat;
   background-size: cover;
   border: rgb(32, 27, 51) 5px solid;
@@ -159,8 +176,8 @@ a {
   display: flex;
   justify-content: center;
 }
-.home-carousel{
-  opacity: .9;
+.home-carousel {
+  opacity: 0.9;
 }
 /* carousel ends */
 
@@ -171,61 +188,76 @@ a {
 /* Home ends */
 
 /* Houses */
-.house-nav{
+.houses-cent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.houses-head {
+  padding: 2rem 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.houses-head > .line {
+  background-color: #c59d5f;
+}
+.house-nav {
   background-color: rgba(0, 0, 0, 0.5);
 }
-.house-head{
+.house-head {
   margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.house-heading{
+.house-heading {
   margin: 3rem 0 1rem;
 
-  font-family: 'Sulphur Point' , sans-serif;
+  font-family: "Sulphur Point", sans-serif;
   font-size: 4rem;
 }
-.line{
+.line {
   width: 15rem;
   height: 2px;
   background-color: black;
 }
-.houses{
+.houses {
   width: 100%;
   position: relative;
   margin-bottom: 5rem;
   display: flex;
   flex-wrap: wrap;
-  align-items:center;
+  align-items: center;
   gap: 6rem;
   justify-content: center;
 }
 /* Houses ends */
 
 /* House Card */
-.card{
+.card {
   position: relative;
   width: 40rem;
   height: 27rem;
-  font-family: 'Sulphur Point' , sans-serif;
+  font-family: "Sulphur Point", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgb(32, 27, 51);
   border: 5px rgb(32, 27, 51) solid;
   border-radius: 14px;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   color: #fff;
 }
-.card-img > img{
+.card-img > img {
   width: 100%;
   height: 25.9rem;
   border-radius: 10px;
   background: center no-repeat fixed;
   background-size: cover;
 }
-.house-detail{
+.house-detail {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   border-top: rgb(144, 136, 175) 3.5px solid;
@@ -236,19 +268,19 @@ a {
   position: absolute;
   bottom: 1px;
 }
-.house-type{
+.house-type {
   font-size: 4rem;
   text-align: center;
-  margin-bottom: .3rem;
+  margin-bottom: 0.3rem;
 }
-.hide{
+.hide {
   display: none;
 }
-.small-detail{
+.small-detail {
   font-size: 2.5rem;
   margin-top: 1rem;
 }
-.od{
+.od {
   padding: 0 2rem;
   display: flex;
   flex-direction: row;
@@ -258,11 +290,11 @@ a {
   display: flex;
   justify-content: center;
 }
-.pn{
+.pn {
   font-size: 1.5rem;
   letter-spacing: 0;
 }
-.btn{
+.btn {
   width: 160px;
   height: 40px;
   margin-top: 1rem;
@@ -275,7 +307,7 @@ a {
   color: black;
   cursor: pointer;
 }
-.btn:hover{
+.btn:hover {
   color: #c59d5f;
   border: #c59d5f 2px solid;
   background: transparent;
@@ -283,14 +315,14 @@ a {
 /* House Card ends */
 
 /* Single House */
-.singHouHero{
+.singHouHero {
   height: 100vh;
 }
-.single-house{
+.single-house {
   display: flex;
   align-items: flex-end;
 }
-.single-house-head{
+.single-house-head {
   padding: 1rem;
   margin-bottom: 3.5rem;
   margin-left: 2.5rem;
@@ -299,54 +331,54 @@ a {
   align-items: center;
   background: rgba(0, 0, 0, 0.65);
 }
-.tagline{
+.tagline {
   font-size: 8rem;
   text-transform: none;
   margin-bottom: 1rem;
 }
-.single-house-head > .line{
+.single-house-head > .line {
   background-color: #c59d5f;
   margin-bottom: 1rem;
 }
-.single-house-head > .btn{
+.single-house-head > .btn {
   margin: 1rem 0;
 }
-.details-container{
+.details-container {
   margin-bottom: 2rem;
   display: flex;
   justify-content: space-between;
 }
-.details-type{
+.details-type {
   margin-bottom: 2rem;
-  font-family: 'Sulphur Point' , sans-serif;
+  font-family: "Sulphur Point", sans-serif;
   font-size: 5rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   color: #000;
 }
-.content{
+.content {
   width: 50rem;
 }
-.content > p{
+.content > p {
   margin-bottom: 1rem;
-  font-family: 'Sulphur Point' , sans-serif;
+  font-family: "Sulphur Point", sans-serif;
   font-size: 2rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   color: #000;
 }
-.extra-container{
+.extra-container {
   margin-bottom: 5rem;
 }
-.extras{
+.extras {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem 15rem;
   justify-content: flex-start;
-  font-family: 'Sulphur Point' , sans-serif;
+  font-family: "Sulphur Point", sans-serif;
   font-size: 1.8rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   color: #000;
 }
-.extras > li{
+.extras > li {
   width: 43rem;
   list-style: none;
 }
@@ -419,3 +451,54 @@ a {
   transition: 0.5s color;
 }
 /* Contact ends */
+
+/* Media Queries */
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .main-heading {
+    font-size: 9rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  .home-container {
+    justify-content: center;
+  }
+  .main-heading {
+    text-align: center;
+  }
+  .carousel {
+    right: unset;
+    bottom: 4%;
+  }
+
+  .nav {
+    justify-content: center;
+    position: relative;
+  }
+  .nav-links {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+  }
+}
+@media screen and (max-width: 550px) {
+  .sub-one {
+    margin-left: 9rem;
+  }
+  .sub-two {
+    margin-left: 14rem;
+  }
+
+  .carousel {
+    right: unset;
+    bottom: 3%;
+  }
+}
+@media screen and (max-width: 500px) {
+}

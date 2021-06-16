@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import logo from './logo.png'
+import React, { useContext, useEffect, useState } from 'react'
+import { HouseContext } from '../../Context';
 import { RiHomeLine } from 'react-icons/all'
 
 import './loader.css'
@@ -7,26 +7,31 @@ import './loader.css'
 export default function Loader() {
     console.log("load");
     const [unload, setUnload] = useState();
-    const [firstTime, setFirstTime] = useState(true);
+    const [firstTimeLoad, setFirstTimeLoad] = useState(true);
 
-    if (firstTime) {
+    //context
+    const contextData = useContext(HouseContext);
+    const { loading } = contextData;
+
+
+    if (firstTimeLoad) {
         document.getElementsByTagName('html')[0].style.overflowY = "hidden";
     }
     useEffect(() => {
         let isMounted = true;
         setTimeout(() => {
-            if (isMounted) {
+            if (isMounted && (!loading)) {
                 setUnload(() => {
                     return {
                         display: "none"
                     }
                 });
                 document.getElementsByTagName('html')[0].style.overflow = "unset";
-                setFirstTime(false);
+                setFirstTimeLoad(false);
             }
-        }, 1000)
+        }, 1250)
         return () => { isMounted = false };
-    }, [])
+    }, [loading])
 
     return <div className="loader" style={unload}>
         <div className="circle rotate">

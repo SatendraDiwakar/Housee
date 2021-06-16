@@ -14,14 +14,14 @@ export default function Home() {
 
     const contextData = useContext(HouseContext);
     const { houses, loading } = contextData
-
     let id;
+
     if (!loading) {
         id = parseInt(houses[12].id) % 5;
     }
-
+    
     if (loading) {
-        return <Loader />
+        return <Loader/>
     }
     return <>
         <Loader />
@@ -34,7 +34,7 @@ export default function Home() {
                     subHeadingTwo="And feel the Difference"
                 />
             </div>
-            {loading ? <Loader /> : <Carousel interior={id} carouStyle="home-carousel" />}
+            <Carousel interior={id} carouStyle="home-carousel" />
         </Hero>
     </>
 }

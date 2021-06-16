@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom'
 import { HouseContext } from '../Context'
 
 export default function Singlehouse({ match }) {
+
     window.scrollTo(0, 0);
+    
     const contextData = useContext(HouseContext);
     const { houses,loading } = contextData;
 
@@ -24,7 +26,7 @@ export default function Singlehouse({ match }) {
 
 
     if (loading) {
-        return <Loader />
+        return <Loader/>
     }
     return <div>
         <Loader/>
