@@ -19,7 +19,7 @@ export default function Navbar({ housesStyle }) {
                             onClick={()=>{
                                 document.getElementsByClassName('menu-toggle')[0].style.display = "none"
                                 document.getElementsByClassName('menu-close')[0].style.display = "block"
-
+                                document.getElementsByClassName('nav')[0].classList.add('open')
                             }}
                         />
                         <MdClose
@@ -27,7 +27,7 @@ export default function Navbar({ housesStyle }) {
                             onClick={()=>{
                                 document.getElementsByClassName('menu-toggle')[0].style.display = "block"
                                 document.getElementsByClassName('menu-close')[0].style.display = "none"
-
+                                document.getElementsByClassName('nav')[0].classList.remove('open')
                             }}
                         />
                     </div>

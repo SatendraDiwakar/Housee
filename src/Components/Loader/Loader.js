@@ -7,16 +7,21 @@ import './loader.css'
 export default function Loader() {
     console.log("load");
     const [unload, setUnload] = useState();
-    const [firstTimeLoad, setFirstTimeLoad] = useState(true);
+    const [notFirstTimeLoad, setNotFirstTimeLoad] = useState(true);
 
     //context
     const contextData = useContext(HouseContext);
     const { loading } = contextData;
 
 
-    if (firstTimeLoad) {
+    //Used to check if loader is loaded 1st time or not
+    if (notFirstTimeLoad) {
         document.getElementsByTagName('html')[0].style.overflowY = "hidden";
+        //if not then we have to hide scroll-bar 
+        //because it was unhidden on first load
+        //as useEffect only executes function when 'loading' changes.
     }
+
     useEffect(() => {
         let isMounted = true;
         setTimeout(() => {
@@ -27,7 +32,7 @@ export default function Loader() {
                     }
                 });
                 document.getElementsByTagName('html')[0].style.overflow = "unset";
-                setFirstTimeLoad(false);
+                setNotFirstTimeLoad(false);
             }
         }, 1250)
         return () => { isMounted = false };
