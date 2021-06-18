@@ -238,6 +238,7 @@ a {
 
 /* House Card */
 .card {
+  overflow-y: hidden;
   position: relative;
   width: 40rem;
   height: 27rem;
@@ -258,6 +259,9 @@ a {
   background: center no-repeat fixed;
   background-size: cover;
 }
+.show{
+  transform: translateY(0rem) !important;
+}
 .house-detail {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -268,6 +272,17 @@ a {
   border-bottom-right-radius: 10px;
   position: absolute;
   bottom: 0;
+  transform: translateY(64%);
+  transition: transform .5s ease-out;
+}
+.house-detail > .icon-button{
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.show2{
+  top: -14% !important;
 }
 .house-type {
   font-size: 4rem;
@@ -395,8 +410,15 @@ a {
   justify-content: space-between;
   margin-top: 18rem;
 }
+.about-container > div{
+  padding: 0 1rem;
+  text-align: center;
+}
 .about-description {
+  overflow: scroll;
   width: 75rem;
+  height: 40rem;
+  padding: 1rem;
   margin-top: 5rem;
   font-family: "Sulphur Point", sans-serif;
   font-size: 1.8rem;
@@ -472,16 +494,52 @@ a {
   html {
     font-size: 9px;
   }
+  .about-container{
+    height: 60vh;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-description{
+    width: 100%;
+    height: 36rem;
+    margin-bottom: 2rem;
+  }  
 }
 @media screen and (max-width: 900px) {
   html {
     font-size: 8px;
+  }  
+  .house-detail{
+    transform: translateY(68%);
+  }
+}
+@media screen and (max-width: 800px) {
+  .contact-container{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .contact-head{
+    margin: unset;
+  }
+  .contact-form-container{
+    margin: 4rem 0 2rem;
+  }
+  .sub-heading{
+    text-align: center;
+  }
+  .sub-one{
+    margin-left: unset;
+  }
+  .sub-two{
+    margin-left: unset;
   }
 }
 @media screen and (max-width: 750px) {
   .main-heading {
     font-size: 9rem;
-  }
+  }  
 }
 @media screen and (max-width: 650px) {
   html{
@@ -533,28 +591,13 @@ a {
   html{
     font-size: 6.5px;
   }
-  .sub-one {
-    margin-left: 9rem;
-  }
-  .sub-two {
-    margin-left: 14rem;
-  }
-
   .carousel {
     right: unset;
     bottom: 3%;
   }
 }
 @media screen and (max-width: 500px) {  
-  .sub-one {
-    margin-left: 0;
-  }
-  .sub-two {
-    margin-left: 0;
-  }
-  .sub-heading{
-    text-align: center;
-  }
+
 }
 @media screen and (max-width: 450px) {
   
