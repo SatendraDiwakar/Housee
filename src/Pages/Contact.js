@@ -8,10 +8,10 @@ import Head from '../Components/Head'
 import ContactForm from '../Components/ContactForm'
 import Loader from '../Components/Loader/Loader'
 
-export default function Contact(){
+export default function Contact({location}){
 
     return <div className="contact">
-        <Loader/>
+        <Loader name={location.pathname}/>
         <Navbar />
         <Hero hero={hero}>
             <div className="container contact-container">

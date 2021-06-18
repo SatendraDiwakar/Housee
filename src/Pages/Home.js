@@ -10,7 +10,7 @@ import Loader from '../Components/Loader/Loader'
 
 import hero from '../images/homeHero.jpg'
 
-export default function Home() {
+export default function Home({location}) {
 
     const contextData = useContext(HouseContext);
     const { houses, loading } = contextData
@@ -24,7 +24,7 @@ export default function Home() {
         return <Loader/>
     }
     return <>
-        <Loader />
+        <Loader name={location.pathname} />
         <Navbar />
         <Hero hero={hero}>
             <div className="container home-container">

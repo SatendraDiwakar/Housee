@@ -8,9 +8,9 @@ import { HouseContext } from '../Context'
 export default function Singlehouse({ match }) {
 
     window.scrollTo(0, 0);
-    
+
     const contextData = useContext(HouseContext);
-    const { houses,loading } = contextData;
+    const { houses, loading } = contextData;
 
     let id;
     let heroHouse;
@@ -26,11 +26,11 @@ export default function Singlehouse({ match }) {
 
 
     if (loading) {
-        return <Loader/>
+        return <Loader />
     }
     return <div>
-        <Loader/>
-        <div className="singHouHero">
+        <Loader />
+        <div className="singleHouHero">
             <div style={heroHouse} className="single-house">
                 <Navbar housesStyle="house-nav" />
                 <div className="single-house-head">
@@ -47,7 +47,7 @@ export default function Singlehouse({ match }) {
             <div className="details-container">
                 <div className="content">
                     <h1 className="details-type">Details</h1>
-                    <p>{houses[id].description}</p>
+                    <p className="details-description">{houses[id].description}</p>
                 </div>
                 <div className="content">
                     <h1 className="details-type">Info</h1>
@@ -58,16 +58,6 @@ export default function Singlehouse({ match }) {
                     <p>Free Breakfast : {houses[id].breakfast ? "Available" : "Not Available"}</p>
                 </div>
             </div>
-        </div>
-        <div className="container extra-container">
-            <h3 className="details-type">
-                Extras
-            </h3>
-            <ul className="extras">
-                {houses[id].extras.map((item, index) => {
-                    return <li key={index} >- {item}</li>;
-                })}
-            </ul>
         </div>
     </div>
 }

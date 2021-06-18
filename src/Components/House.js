@@ -7,14 +7,12 @@ export default function House({ houseImage, houseType, rentPrice, rating, itemNo
     itemNo = parseInt(itemNo);
 
     function handleClick1(){
-        console.log("clicked");
         document.getElementsByClassName("house-detail")[itemNo-1].classList.toggle("show")
         document.getElementsByClassName("show1")[itemNo-1].classList.add("hide")
         document.getElementsByClassName("show2")[itemNo-1].classList.remove("hide")
 
     }
     function handleClick2(){
-        console.log("clicked");
         document.getElementsByClassName("house-detail")[itemNo-1].classList.toggle("show")
         document.getElementsByClassName("show1")[itemNo-1].classList.remove("hide")
         document.getElementsByClassName("show2")[itemNo-1].classList.add("hide")

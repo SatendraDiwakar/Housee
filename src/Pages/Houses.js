@@ -8,7 +8,7 @@ import { HouseContext } from '../Context'
 
 import houseHero from '../images/houseHero.jpg'
 
-export default function Houses() {
+export default function Houses({location}) {
 
     window.scrollTo(0, 0);
 
@@ -26,7 +26,7 @@ export default function Houses() {
     }
     return <div>
 
-        <Loader />
+        <Loader name={location.pathname}/>
         <div style={heroHouse} className="houses-cent">
             <Navbar housesStyle="house-nav" />
             <div className="houses-head">

@@ -39,7 +39,7 @@ export default function Carousel({ interior , carouStyle }) {
     // },[i,up])
 
     return (
-        <div className="carousel">
+        <div className="carousel" onClick={up}>
             <button className="icon-button" onClick={up}><FaAngleLeft /></button>
             <div className={`carousel-image ${carouStyle}`}>
                 <img

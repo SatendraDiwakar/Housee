@@ -7,10 +7,10 @@ import Navbar from "../Components/Navbar";
 import Head from "../Components/Head";
 import Loader from "../Components/Loader/Loader";
 
-export default function About() {
+export default function About({location}) {
   return (
     <div className="about">
-      <Loader/>
+      <Loader name={location.pathname}/>
       <Navbar />
       <Hero hero={hero}>
         <div className="container about-container">
