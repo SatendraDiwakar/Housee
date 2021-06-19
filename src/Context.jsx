@@ -16,7 +16,7 @@ export default function HouseProvider({children}){
     const [dataState, setDataState] = useState();
     const [loading,setLoading] = useState(true);
 
-    function getData(items){
+    async function getData(items){
         let tempItems = items.houses.map(itm=>{
             let id = itm.id;
             let houseImage = itm.houseImage;
@@ -47,11 +47,18 @@ export default function HouseProvider({children}){
     }
 
     useEffect(()=>{
-        const houses = getData(data);
-        // console.log(houses);
-        const interiors = data.interiors;
-        setDataState({houses,interiors,homeHero,housesHero,aboutHero,contactHero });
-        setLoading(false);
+        async function fetch(){
+            const houses = await getData(data);
+            // console.log(houses);
+            const interiors = data.interiors;
+            setDataState(()=>{
+                return {houses,interiors,homeHero,housesHero,aboutHero,contactHero}; 
+            });
+            setLoading(()=>{
+                return false
+            });
+        }
+        fetch();
     },[])
     
     return <HouseContext.Provider value={{...dataState , loading}}>
