@@ -8,25 +8,24 @@ import { HouseContext } from '../Context'
 
 import Loader from '../Components/Loader/Loader'
 
-import hero from '../images/homeHero.jpg'
 
-export default function Home({location}) {
+export default function Home({ location }) {
 
     const contextData = useContext(HouseContext);
-    const { houses, loading } = contextData
+    const { houses, loading, homeHero } = contextData
     let id;
 
     if (!loading) {
         id = parseInt(houses[12].id) % 5;
     }
-    
+
     if (loading) {
-        return <Loader/>
+        return <Loader />
     }
     return <>
         <Loader name={location.pathname} />
         <Navbar />
-        <Hero hero={hero}>
+        <Hero hero={homeHero}>
             <div className="container home-container">
                 <Head
                     title="redefining luxury"

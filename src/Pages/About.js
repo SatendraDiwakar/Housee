@@ -1,18 +1,21 @@
-import React from "react";
-
-import hero from "../images/aboutHero.jpg";
+import React, { useContext } from "react";
 
 import Hero from "../Components/Hero";
 import Navbar from "../Components/Navbar";
 import Head from "../Components/Head";
 import Loader from "../Components/Loader/Loader";
+import { HouseContext } from '../Context'
 
-export default function About({location}) {
+export default function About({ location }) {
+
+  const contextData = useContext(HouseContext);
+  const { aboutHero } = contextData;
+
   return (
     <div className="about">
-      <Loader name={location.pathname}/>
+      <Loader name={location.pathname} />
       <Navbar />
-      <Hero hero={hero}>
+      <Hero hero={aboutHero}>
         <div className="container about-container">
 
           <Head title="about us" />

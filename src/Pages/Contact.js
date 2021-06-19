@@ -1,23 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-import hero from '../images/contactHero.jpg'
 
 import Hero from '../Components/Hero'
 import Navbar from '../Components/Navbar'
 import Head from '../Components/Head'
 import ContactForm from '../Components/ContactForm'
 import Loader from '../Components/Loader/Loader'
+import { HouseContext } from '../Context'
 
-export default function Contact({location}){
+export default function Contact({ location }) {
+
+    const contextData = useContext(HouseContext);
+    const { contactHero } = contextData;
 
     return <div className="contact">
-        <Loader name={location.pathname}/>
+        <Loader name={location.pathname} />
         <Navbar />
-        <Hero hero={hero}>
+        <Hero hero={contactHero}>
             <div className="container contact-container">
                 <div className="contact-head">
-                    <Head 
-                        title="contact" 
+                    <Head
+                        title="contact"
                         subHeadingOne="We would love to here from you."
                         subHeadingTwo="Team Housee"
                     />

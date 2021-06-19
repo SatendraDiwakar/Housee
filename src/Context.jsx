@@ -1,5 +1,11 @@
 import React , {createContext, useEffect, useState}  from 'react'
 
+import homeHero from './images/homeHero.jpg'
+import housesHero from './images/houseHero.jpg'
+import aboutHero from './images/aboutHero.jpg'
+import contactHero from './images/contactHero.jpg'
+
+
 
 import {data} from './data'
 
@@ -44,8 +50,8 @@ export default function HouseProvider({children}){
         const houses = getData(data);
         // console.log(houses);
         const interiors = data.interiors;
+        setDataState({houses,interiors,homeHero,housesHero,aboutHero,contactHero });
         setLoading(false);
-        setDataState({houses,interiors});
     },[])
     
     return <HouseContext.Provider value={{...dataState , loading}}>

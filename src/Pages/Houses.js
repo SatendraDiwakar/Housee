@@ -2,22 +2,19 @@ import React, { useContext } from 'react'
 import Navbar from '../Components/Navbar'
 import House from '../Components/House'
 import Loader from '../Components/Loader/Loader'
-
-
 import { HouseContext } from '../Context'
 
-import houseHero from '../images/houseHero.jpg'
 
-export default function Houses({location}) {
+export default function Houses({ location }) {
 
     window.scrollTo(0, 0);
 
     const contextData = useContext(HouseContext);
-    const { houses, loading } = contextData;
+    const { houses, loading, housesHero } = contextData;
 
     const heroHouse = {
         height: "80vh",
-        background: `url("${houseHero}") center no-repeat fixed`,
+        background: `url("${housesHero}") center no-repeat fixed`,
         backgroundSize: "cover"
     }
 
@@ -26,7 +23,7 @@ export default function Houses({location}) {
     }
     return <div>
 
-        <Loader name={location.pathname}/>
+        <Loader name={location.pathname} />
         <div style={heroHouse} className="houses-cent">
             <Navbar housesStyle="house-nav" />
             <div className="houses-head">

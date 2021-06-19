@@ -53,7 +53,7 @@ export default function Loader({ name }) {
                 anim();
                 setNotFirstTimeLoad(false);
             }
-        }, 1250)
+        }, 1750)
         return () => {
             isMounted = false
         };
@@ -63,6 +63,5 @@ export default function Loader({ name }) {
         <div className="circle rotate">
         </div>
         {<RiHomeLine className="home" />}
-
     </div>
 }
