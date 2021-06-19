@@ -66,7 +66,7 @@ export const data = {
     {
       id: "1",
       houseImage: house1,
-      name: "single economy",
+      name: "Housee-1",
       price: 900,
       rating: 4.9,
       pets: true,
@@ -77,7 +77,7 @@ export const data = {
     {
       id: "2",
       houseImage: house2,
-      name: "single economy",
+      name: "Housee-2",
       price: 700,
       rating: 4.7,
       pets: true,
@@ -88,7 +88,7 @@ export const data = {
     {
       id: "3",
       houseImage: house3,
-      name: "single economy",
+      name: "Housee-3",
       price: 800,
       rating: 4.8,
       pets: false,
@@ -99,7 +99,7 @@ export const data = {
     {
       id: "4",
       houseImage: house4,
-      name: "single economy",
+      name: "Housee-4",
       price: 700,
       rating: 4.6,
       pets: false,
@@ -110,7 +110,7 @@ export const data = {
     {
       id: "5",
       houseImage: house5,
-      name: "single economy",
+      name: "Housee-5",
       price: 900,
       rating: 4.8,
       pets: true,
@@ -121,7 +121,7 @@ export const data = {
     {
       id: "6",
       houseImage: house6,
-      name: "single economy",
+      name: "Housee-6",
       price: 600,
       rating: 4.9,
       pets: false,
@@ -132,7 +132,7 @@ export const data = {
     {
       id: "7",
       houseImage: house7,
-      name: "single economy",
+      name: "Housee-7",
       price: 700,
       rating: 4.6,
       pets: true,
@@ -143,7 +143,7 @@ export const data = {
     {
       id: "8",
       houseImage: house8,
-      name: "single economy",
+      name: "Housee-8",
       price: 800,
       rating: 4.5,
       pets: true,
@@ -154,7 +154,7 @@ export const data = {
     {
       id: "9",
       houseImage: house9,
-      name: "single economy",
+      name: "Housee-9",
       price: 600,
       rating: 4.7,
       pets: false,
@@ -165,7 +165,7 @@ export const data = {
     {
       id: "10",
       houseImage: house10,
-      name: "single economy",
+      name: "Housee-10",
       price: 1000,
       rating: 4.9,
       pets: true,
@@ -176,7 +176,7 @@ export const data = {
     {
       id: "11",
       houseImage: house11,
-      name: "single economy",
+      name: "Housee-11",
       price: 1000,
       rating: 4.8,
       pets: true,
@@ -187,7 +187,7 @@ export const data = {
     {
       id: "12",
       houseImage: house12,
-      name: "single economy",
+      name: "Housee-12",
       price: 700,
       rating: 4.6,
       pets: false,
@@ -198,7 +198,7 @@ export const data = {
     {
       id: "13",
       houseImage: house13,
-      name: "single economy",
+      name: "Housee-13",
       price: 800,
       rating: 4.8,
       pets: false,
@@ -209,7 +209,7 @@ export const data = {
     {
       id: "14",
       houseImage: house14,
-      name: "single economy",
+      name: "Housee-14",
       price: 700,
       rating: 4.9,
       pets: false,
@@ -220,7 +220,7 @@ export const data = {
     {
       id: "15",
       houseImage: house15,
-      name: "single economy",
+      name: "Housee-15",
       price: 1000,
       rating: 4.5,
       pets: true,
@@ -231,7 +231,7 @@ export const data = {
     {
       id: "16",
       houseImage: house16,
-      name: "single economy",
+      name: "Housee-16",
       price: 1000,
       rating: 4.6,
       pets: true,
@@ -242,7 +242,7 @@ export const data = {
     {
       id: "17",
       houseImage: house17,
-      name: "single economy",
+      name: "Housee-17",
       price: 1000,
       rating: 4.7,
       pets: true,
@@ -253,7 +253,7 @@ export const data = {
     {
       id: "18",
       houseImage: house18,
-      name: "single economy",
+      name: "Housee-18",
       price: 800,
       rating: 4.9,
       pets: true,
@@ -264,7 +264,7 @@ export const data = {
     {
       id: "19",
       houseImage: house19,
-      name: "single economy",
+      name: "Housee-19",
       price: 1000,
       rating: 4.8,
       pets: true,
@@ -275,7 +275,7 @@ export const data = {
     {
       id: "20",
       houseImage: house20,
-      name: "single economy",
+      name: "Housee-20",
       price: 900,
       rating: 4.7,
       pets: false,
@@ -286,7 +286,7 @@ export const data = {
     {
       id: "21",
       houseImage: house21,
-      name: "single economy",
+      name: "Housee-21",
       price: 700,
       rating: 4.5,
       pets: true,
