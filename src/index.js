@@ -6,12 +6,12 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import HouseProvider from './Context'
 
 ReactDOM.render(
-    <HouseProvider>
-      <Router>
-        <App />
-      </Router>
-    </HouseProvider>
-    ,
+  <HouseProvider>
+    <Router basename="/housee.netlify.app" >
+      <App />
+    </Router>
+  </HouseProvider>
+  ,
   document.getElementById('root')
 );
 
