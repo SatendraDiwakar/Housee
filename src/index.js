@@ -7,7 +7,7 @@ import HouseProvider from './Context'
 
 ReactDOM.render(
   <HouseProvider>
-    <Router basename="/housee.netlify.app" >
+    <Router basename="/">
       <App />
     </Router>
   </HouseProvider>
