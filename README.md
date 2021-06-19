@@ -13,6 +13,20 @@ The Housee is a website that provides travellers world class Houses with world c
 
 - Houses Page
   ![image](https://github.com/Satendra-EXE/ScreenshotsPr1/blob/main/houses1.png)
+  ![image](https://github.com/Satendra-EXE/ScreenshotsPr1/blob/main/houses2.png)
+
+- Individual House Page
+  ![image](https://github.com/Satendra-EXE/ScreenshotsPr1/blob/main/individual_house1.png)
+  ![image](https://github.com/Satendra-EXE/ScreenshotsPr1/blob/main/individual_house2.png)
+
+- About Page
+  ![image](https://github.com/Satendra-EXE/ScreenshotsPr1/blob/main/about.png)
+
+- Contact Page
+  ![image](https://github.com/Satendra-EXE/ScreenshotsPr1/blob/main/contact.png)
+
+- Responsive View
+  ![image](https://github.com/Satendra-EXE/ScreenshotsPr1/blob/main/responsive_view.png)
 
 ## Requirements
 
