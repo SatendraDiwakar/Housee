@@ -13,8 +13,8 @@ export default function Home({ location }) {
 
     const contextData = useContext(HouseContext);
     const { houses, loading, homeHero } = contextData
+    
     let id;
-
     if (!loading) {
         id = parseInt(houses[12].id) % 5;
     }

@@ -3,7 +3,7 @@ import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 
 import { HouseContext } from '../Context'
 
-export default function Carousel({ interior , carouStyle }) {
+export default function Carousel({ interior, carouStyle }) {
 
     const [i, setI] = useState(0);
 
@@ -11,8 +11,8 @@ export default function Carousel({ interior , carouStyle }) {
     const { interiors } = contextData;
     const inter = interiors[interior];
 
-    if(!carouStyle){
-        carouStyle= "";
+    if (!carouStyle) {
+        carouStyle = "";
     }
 
 

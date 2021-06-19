@@ -1,23 +1,28 @@
-import React , {createContext, useEffect, useState}  from 'react'
+import React, { Component, createContext } from 'react'
 
 import homeHero from './images/homeHero.jpg'
 import housesHero from './images/houseHero.jpg'
 import aboutHero from './images/aboutHero.jpg'
 import contactHero from './images/contactHero.jpg'
 
-
-
-import {data} from './data'
+import { data } from './data'
 
 export const HouseContext = createContext(null);
 
-export default function HouseProvider({children}){
+export default class HouseProvider extends Component {
 
-    const [dataState, setDataState] = useState();
-    const [loading,setLoading] = useState(true);
+    state = {
+        houses: {},
+        interiors: [],
+        homeHero: "",
+        housesHero: "",
+        aboutHero: "",
+        contactHero: "",
+        loading: true
+    }
 
-    async function getData(items){
-        let tempItems = items.houses.map(itm=>{
+    async getData(items) {
+        let tempItems = items.houses.map(itm => {
             let id = itm.id;
             let houseImage = itm.houseImage;
             let houseType = itm.name;
@@ -26,43 +31,46 @@ export default function HouseProvider({children}){
             let {
                 pets,
                 breakfast,
-                description,
-                extras} = itm;
+                description } = itm;
 
             let house = {
-                id,                
+                id,
                 houseImage,
                 houseType,
                 price,
                 rating,
                 pets,
                 breakfast,
-                description,
-                extras
+                description
             };
 
             return house;
         });
-        return tempItems;
+        return { tempItems, homeHero, housesHero, aboutHero, contactHero };
+    }
+    async fetch() {
+        await this.getData(data).then((response) => {
+            this.setState({
+                houses: response.tempItems,
+                interiors: data.interiors,
+                homeHero: response.homeHero,
+                housesHero: response.housesHero,
+                aboutHero: response.aboutHero,
+                contactHero: response.contactHero,
+            }, () => {
+                this.setState({
+                    loading: false
+                })
+            })
+        })
+    }
+    componentDidMount() {
+        this.fetch();
     }
 
-    useEffect(()=>{
-        async function fetch(){
-            const houses = await getData(data);
-            // console.log(houses);
-            const interiors = data.interiors;
-            setDataState(()=>{
-                return {houses,interiors,homeHero,housesHero,aboutHero,contactHero}; 
-            });
-            setLoading(()=>{
-                return false
-            });
-        }
-        fetch();
-    },[])
-    
-    return <HouseContext.Provider value={{...dataState , loading}}>
-        {children}
-    </HouseContext.Provider>
-
+    render() {
+        return <HouseContext.Provider value={{ ...this.state }}>
+            {this.props.children}
+        </HouseContext.Provider>
+    }
 }
