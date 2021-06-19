@@ -27,7 +27,7 @@ export default function About({location}) {
             relaxing.
             <br />
             <br />
-            We provide world class service to travelers around world.
+            We provide world class Houses with world class services to travelers around world.
             <br />
             <br />
             <span className="highlyt">Housee</span> seamlessly connects millions

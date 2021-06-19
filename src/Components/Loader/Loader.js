@@ -1,11 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { HouseContext } from '../../Context';
 import { RiHomeLine } from 'react-icons/all'
 
 import './loader.css'
 
 export default function Loader({ name }) {
-    console.log("load");
     const [unload, setUnload] = useState();
     const [notFirstTimeLoad, setNotFirstTimeLoad] = useState(true);
 
@@ -13,7 +12,7 @@ export default function Loader({ name }) {
     const contextData = useContext(HouseContext);
     const { loading } = contextData;
 
-    function anime() {
+    const anim = useCallback(() => {
         if (name === "/") {
             document.getElementsByClassName('home-container')[0].classList.add('animate');
             document.getElementsByClassName('carousel')[0].classList.add('animate');
@@ -31,7 +30,7 @@ export default function Loader({ name }) {
             document.getElementsByClassName('single-house-head')[0].classList.add('animate');
             document.getElementsByClassName('carousel')[0].classList.add('animate');
         }
-    }
+    }, [name])
 
     //Used to check if loader is loaded 1st time or not
     if (notFirstTimeLoad) {
@@ -51,14 +50,14 @@ export default function Loader({ name }) {
                     }
                 });
                 document.getElementsByTagName('html')[0].style.overflow = "unset";
-                anime();
+                anim();
                 setNotFirstTimeLoad(false);
             }
         }, 1250)
         return () => {
             isMounted = false
         };
-    }, [loading])
+    }, [loading, anim])
 
     return <div className="loader" style={unload}>
         <div className="circle rotate">
