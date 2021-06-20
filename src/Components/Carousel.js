@@ -39,11 +39,12 @@ export default function Carousel({ interior, carouStyle }) {
     // },[i,up])
 
     return (
-        <div className="carousel" onClick={up}>
+        <div className="carousel">
             <button className="icon-button" onClick={up}><FaAngleLeft /></button>
             <div className={`carousel-image ${carouStyle}`}>
                 <img
                     src={inter[i]} alt="Featured House"
+                    onClick={up}
                 // onMouseOver={()=>clearTimeout(timer)}
                 // onMouseOut={()=>{timer = setTimeout(up,3000)}}    
                 />
