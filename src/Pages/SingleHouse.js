@@ -7,14 +7,17 @@ import { HouseContext } from '../Context'
 
 export default function Singlehouse({ match }) {
 
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0); // To open page from top
 
+    // context
     const contextData = useContext(HouseContext);
     const { houses, loading } = contextData;
 
+    // defining identifiers
     let id;
     let heroHouse;
 
+    // Chechin context data is loaded or not
     if (!loading) {
         id = parseInt(match.params.id) - 1;
         heroHouse = {
@@ -24,11 +27,12 @@ export default function Singlehouse({ match }) {
         }
     }
 
-
+    // Returning preloader if context data is not there
     if (loading) {
         return <Loader />
     }
     return <div>
+        {/* preloader used for every path change  */}
         <Loader />
         <div className="singleHouHero">
             <div style={heroHouse} className="single-house">

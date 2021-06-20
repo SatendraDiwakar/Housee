@@ -4,18 +4,26 @@ import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
 
 export default function House({ houseImage, houseType, rentPrice, rating, itemNo }) {
 
+    // a number for handling click on a particular house card
     itemNo = parseInt(itemNo);
 
-    function handleClick1(){
-        document.getElementsByClassName("house-detail")[itemNo-1].classList.toggle("show")
-        document.getElementsByClassName("show1")[itemNo-1].classList.add("hide")
-        document.getElementsByClassName("show2")[itemNo-1].classList.remove("hide")
+    // functions to handle click events
+    function handleClick1() {
+        // displaying extra details on click
+        document.getElementsByClassName("house-detail")[itemNo - 1].classList.toggle("show")
+
+        // handling display for up arrow icon
+        document.getElementsByClassName("show1")[itemNo - 1].classList.add("hide")
+        document.getElementsByClassName("show2")[itemNo - 1].classList.remove("hide")
 
     }
-    function handleClick2(){
-        document.getElementsByClassName("house-detail")[itemNo-1].classList.toggle("show")
-        document.getElementsByClassName("show1")[itemNo-1].classList.remove("hide")
-        document.getElementsByClassName("show2")[itemNo-1].classList.add("hide")
+    function handleClick2() {
+        // hiding extra details on click
+        document.getElementsByClassName("house-detail")[itemNo - 1].classList.toggle("show")
+
+        // handling display for up arrow icon
+        document.getElementsByClassName("show1")[itemNo - 1].classList.remove("hide")
+        document.getElementsByClassName("show2")[itemNo - 1].classList.add("hide")
 
     }
 
@@ -25,11 +33,11 @@ export default function House({ houseImage, houseType, rentPrice, rating, itemNo
                 <img src={houseImage} alt="HouseImage" />
             </div>
             <div className="house-detail">
-                <FaAngleUp 
+                <FaAngleUp
                     className="icon-button show1"
                     onClick={handleClick1}
                 />
-                <FaAngleDown 
+                <FaAngleDown
                     className="icon-button show2 hide"
                     onClick={handleClick2}
                 />

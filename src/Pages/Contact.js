@@ -10,10 +10,12 @@ import { HouseContext } from '../Context'
 
 export default function Contact({ location }) {
 
+    //context
     const contextData = useContext(HouseContext);
     const { contactHero } = contextData;
 
     return <div className="contact">
+        {/* preloader used for every path change  */}
         <Loader name={location.pathname} />
         <Navbar />
         <Hero hero={contactHero}>

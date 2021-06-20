@@ -8,11 +8,13 @@ import { HouseContext } from '../Context'
 
 export default function About({ location }) {
 
+  // context
   const contextData = useContext(HouseContext);
   const { aboutHero } = contextData;
 
   return (
     <div className="about">
+      {/* preloader used for every path change  */}
       <Loader name={location.pathname} />
       <Navbar />
       <Hero hero={aboutHero}>

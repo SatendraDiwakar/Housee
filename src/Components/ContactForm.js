@@ -11,7 +11,7 @@ export default function ContactForm() {
                 className="text-area"
                 placeholder="HOW CAN I HELP?"
             ></textarea>
-            <button className="msg-btn" style={{background:"transparent",border:"none"}}>
+            <button className="msg-btn" style={{ background: "transparent", border: "none" }}>
                 <FaEnvelope />
             </button>
         </form>

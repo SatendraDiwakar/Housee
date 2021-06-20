@@ -5,6 +5,7 @@ import Loader from '../Components/Loader/Loader'
 
 export default function Error() {
 
+    // context
     const contextData = useContext(HouseContext);
     const { housesHero } = contextData;
 
@@ -16,7 +17,8 @@ export default function Error() {
     }
 
     return <>
-        <Loader/>
+        {/* preloader used for every path change  */}
+        <Loader />
         <div style={heroHouse} className="houses-cent">
             <div className="houses-head" style={{ width: "50rem" }}>
                 <p className="main-heading tagline">Error 404</p>

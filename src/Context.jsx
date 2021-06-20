@@ -1,13 +1,15 @@
 import React, { Component, createContext } from 'react'
 
+// all hero images
 import homeHero from './images/homeHero.jpg'
 import housesHero from './images/houseHero.jpg'
 import aboutHero from './images/aboutHero.jpg'
 import contactHero from './images/contactHero.jpg'
 
+// importing data
 import { data } from './data'
 
-export const HouseContext = createContext(null);
+export const HouseContext = createContext(null); // exporting context
 
 export default class HouseProvider extends Component {
 
@@ -21,6 +23,7 @@ export default class HouseProvider extends Component {
         loading: true
     }
 
+    // making getData function to make promise for syncronizing
     async getData(items) {
         let tempItems = items.houses.map(itm => {
             let id = itm.id;
@@ -48,6 +51,8 @@ export default class HouseProvider extends Component {
         });
         return { tempItems, homeHero, housesHero, aboutHero, contactHero };
     }
+
+    // fetching data syncronously
     async fetch() {
         await this.getData(data).then((response) => {
             this.setState({
@@ -64,6 +69,8 @@ export default class HouseProvider extends Component {
             })
         })
     }
+
+    // fetch data on component mount
     componentDidMount() {
         this.fetch();
     }

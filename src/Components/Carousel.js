@@ -5,17 +5,19 @@ import { HouseContext } from '../Context'
 
 export default function Carousel({ interior, carouStyle }) {
 
-    const [i, setI] = useState(0);
 
     const contextData = useContext(HouseContext);
     const { interiors } = contextData;
     const inter = interiors[interior];
 
+    const [i, setI] = useState(0); // state to change carousel image on clicking
+
+    // carousel arrow styling conditionaly based on white/black background
     if (!carouStyle) {
         carouStyle = "";
     }
 
-
+    // forward image logic
     function up() {
         if (i >= 0 && i < (inter.length - 1)) {
             setI(prevI => prevI + 1)
@@ -24,7 +26,7 @@ export default function Carousel({ interior, carouStyle }) {
         }
     }
 
-
+    // backward image logic
     function down() {
         if (i > 0 && i <= inter.length) {
             setI(prevI => prevI - 1)
@@ -33,11 +35,6 @@ export default function Carousel({ interior, carouStyle }) {
         }
     }
 
-    // let timer = useEffect(()=>{
-    //     let time = setTimeout(up,5000);
-    //         return time;
-    // },[i,up])
-
     return (
         <div className="carousel">
             <button className="icon-button" onClick={up}><FaAngleLeft /></button>
@@ -45,8 +42,6 @@ export default function Carousel({ interior, carouStyle }) {
                 <img
                     src={inter[i]} alt="Featured House"
                     onClick={up}
-                // onMouseOver={()=>clearTimeout(timer)}
-                // onMouseOut={()=>{timer = setTimeout(up,3000)}}    
                 />
             </div>
             <button className="icon-button" onClick={down}><FaAngleRight /></button>
