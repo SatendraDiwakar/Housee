@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState, useRef } from 'react'
 import Navbar from '../Components/Navbar'
 import House from '../Components/House'
 import Loader from '../Components/Loader/Loader'
@@ -13,6 +13,9 @@ export default function Houses({ location }) {
     // states
     const [getHouse, setGetHouse] = useState([]); // filtered data storage
     const [numberArray, setNumberArray] = useState(["1", "2", "3"]); // Initial number of element to put on screen
+    
+    const debounce = useRef(window.scrollY); // For storing previous scrolled height
+    const [hyt, setHyt] = useState(0); // Used for storing scrolled height
 
     // Dynamic styling of hero
     const heroHouse = {
@@ -24,43 +27,61 @@ export default function Houses({ location }) {
     // logic for adding more elements to screen on scroll
     useEffect(() => {
         let isMounted = true;
-        let ch;
+        let check;
         let ht;
+        let timer;
+        clearTimeout(timer)
         function addHouseToScreen() {
-            if (!loading) {
-                ch = true; // flag for adding elements at a time and checking will unmount
-                if (isMounted) {
-                    houses.forEach(itm => {
-                        let lastSecondElement = numberArray[numberArray.length - 1];
-                        if (ch) {
 
-                            // selecting house card if its in document to compare its position
-                            if (document.getElementsByClassName('card')[parseInt(lastSecondElement) - 1]) {
-                                ht = document.getElementsByClassName('card')[parseInt(lastSecondElement) - 1].getBoundingClientRect();
-                            }
-                            // Checking if house card reached at a screen position or not 
-                            if (ht.top <= window.innerHeight) {
-                                if (numberArray.includes(itm.id) === false) {
-                                    
-                                    // Updating number of elements to show
-                                    setNumberArray(prevVl => {
-                                        ch = false;
-                                        return [...prevVl, itm.id]
-                                    });
-                                }
+            if (!loading) {
+                check = true; // flag for adding elements at a time and checking will unmount
+                if (isMounted) {
+
+                    debounce.current = hyt;
+                    setHyt(window.scrollY);
+
+                    houses.forEach(itm => {
+                        let lastSecondElement = numberArray[numberArray.length - 2];
+
+                        // selecting house card if its in document to compare its position
+                        if (document.getElementsByClassName('card')[parseInt(lastSecondElement) - 1]) {
+                            ht = document.getElementsByClassName('card')[parseInt(lastSecondElement) - 1].getBoundingClientRect();
+                        }
+
+                        // Checking if house card reached at a screen position or not 
+                        if (ht.top <= window.innerHeight) {
+                            if (numberArray.includes(itm.id) === false) {
+                                
+                                // Debouncing
+                                timer = setTimeout(() => {
+                                    if (check) {
+                                        if (hyt === debounce.current) {
+                                            // Updating number of elements to show
+                                            setNumberArray(prevVl => {
+                                                // Adding 10 elements at a time
+                                                if (prevVl.length % 10 === 0)
+                                                    check = false;
+                                                return [...prevVl, itm.id]
+                                            });
+                                        }
+                                    }
+                                }, 10)
                             }
                         }
                     })
                 }
             }
-            console.log(numberArray);
         }
-        window.addEventListener('scroll', addHouseToScreen)
+        if (!document.getElementsByClassName('card')[parseInt(houses.length) - 1]) {
+            window.addEventListener('scroll', addHouseToScreen)
+        }
         return () => {
             isMounted = false;
             window.removeEventListener('scroll', addHouseToScreen)
         };
-    }, [houses, numberArray, loading])
+    }, [houses, numberArray, hyt, loading])
+
+    
 
     // Filtering elements based on number of elements
     useEffect(() => {

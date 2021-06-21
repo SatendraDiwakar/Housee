@@ -4,7 +4,7 @@ The Housee is a website that provides travellers world class Houses with world c
 
 ## Demo
 
-[Housee]()
+[Housee](https://housee.netlify.app)
 
 ## Screenshots
 
@@ -31,15 +31,25 @@ The Housee is a website that provides travellers world class Houses with world c
 ## Requirements
 
 - Reactjs
-- Node
+- Javascript
+- HTML
+- CSS
 
 ## Dependencies
 
 - react-router-dom
 - react-icons
 
-Also context-API is used in this app.
-And the app is completely responsive.
+## Concepts Used
+
+- Class based components
+- Functional Components
+- Hooks
+- Routing
+- Context-API
+- Responsive Designs
+- Debouncing
+- async-await
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

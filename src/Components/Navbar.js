@@ -10,6 +10,8 @@ export default function Navbar({ housesStyle }) {
     // initializing nav bar link names
     const links = ['/', 'houses', 'about', 'contact']
 
+
+
     return (
         <header className={housesStyle}>
             <div className="container">

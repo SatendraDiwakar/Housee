@@ -58,7 +58,6 @@ export default function Loader({ name }) {
                 document.getElementsByTagName('html')[0].style.overflow = "unset";
                 anim();
                 setNotFirstTimeLoad(false);
-                console.log("2000");
             }
         }, 2000)
         return () => {
