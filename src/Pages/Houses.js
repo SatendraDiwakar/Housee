@@ -11,9 +11,9 @@ export default function Houses({ location }) {
     const { houses, loading, housesHero } = contextData;
 
     // states
-    const [getHouse, setGetHouse] = useState([]); // filtered data storage
+    const [getHouse, setGetHouse] = useState([]); // for filtered data storage
     const [numberArray, setNumberArray] = useState(["1", "2", "3"]); // Initial number of element to put on screen
-    
+
     const debounce = useRef(window.scrollY); // For storing previous scrolled height
     const [hyt, setHyt] = useState(0); // Used for storing scrolled height
 
@@ -43,29 +43,31 @@ export default function Houses({ location }) {
                     houses.forEach(itm => {
                         let lastSecondElement = numberArray[numberArray.length - 2];
 
-                        // selecting house card if its in document to compare its position
-                        if (document.getElementsByClassName('card')[parseInt(lastSecondElement) - 1]) {
-                            ht = document.getElementsByClassName('card')[parseInt(lastSecondElement) - 1].getBoundingClientRect();
-                        }
+                        // checking house card if its in the document or not
+                        if (document.getElementsByClassName('card')[0]) {
 
-                        // Checking if house card reached at a screen position or not 
-                        if (ht.top <= window.innerHeight) {
-                            if (numberArray.includes(itm.id) === false) {
-                                
-                                // Debouncing
-                                timer = setTimeout(() => {
-                                    if (check) {
-                                        if (hyt === debounce.current) {
-                                            // Updating number of elements to show
-                                            setNumberArray(prevVl => {
-                                                // Adding 10 elements at a time
-                                                if (prevVl.length % 10 === 0)
-                                                    check = false;
-                                                return [...prevVl, itm.id]
-                                            });
+                            // selecting last second card in the document
+                            ht = document.getElementsByClassName('card')[parseInt(lastSecondElement) - 1].getBoundingClientRect();
+
+                            // Checking if house card reached at a screen position or not 
+                            if (ht.top <= window.innerHeight) {
+                                if (numberArray.includes(itm.id) === false) {
+
+                                    // Debouncing
+                                    timer = setTimeout(() => {
+                                        if (check) {
+                                            if (hyt === debounce.current) {
+                                                // Updating number of elements to show
+                                                setNumberArray(prevVl => {
+                                                    // Adding 10 elements at a time
+                                                    if (prevVl.length % 10 === 0)
+                                                        check = false;
+                                                    return [...prevVl, itm.id]
+                                                });
+                                            }
                                         }
-                                    }
-                                }, 10)
+                                    }, 10)
+                                }
                             }
                         }
                     })
@@ -81,7 +83,7 @@ export default function Houses({ location }) {
         };
     }, [houses, numberArray, hyt, loading])
 
-    
+
 
     // Filtering elements based on number of elements
     useEffect(() => {

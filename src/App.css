@@ -156,15 +156,28 @@ a {
   z-index: 1500;
 }
 .carousel-image {
+  overflow: hidden;
   margin: 0 1rem;
-}
-.carousel-image > img {
   width: 40rem;
-  height: 22rem;
+  height: 23rem;
   background: rgb(32, 27, 51) center no-repeat;
   background-size: cover;
   border: rgb(32, 27, 51) 5px solid;
   border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.carousel-img-container {
+  display: flex;
+  transform: translateX(0%);
+  transition: transform .5s;
+}
+.carousel-img-container > img {
+  width: 40rem;
+  height: 22rem;
+  flex: 0 0 40rem;
+  border-radius: 20px;
+  visibility: hidden;
   cursor: pointer;
 }
 .icon-button {
@@ -609,7 +622,7 @@ a {
 /* Animation */
 
 .animate {
-  animation: reveal .9s ease-out;
+  animation: reveal 0.9s ease-out;
 }
 
 @keyframes reveal {
