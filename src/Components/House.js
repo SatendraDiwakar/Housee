@@ -35,10 +35,12 @@ export default function House({ houseImage, houseType, rentPrice, rating, itemNo
             <div className="house-detail">
                 <FaAngleUp
                     className="icon-button show1"
+                    style={{ background: "none" }}
                     onClick={handleClick1}
-                />
+                    />
                 <FaAngleDown
                     className="icon-button show2 hide"
+                    style={{ background: "none" }}
                     onClick={handleClick2}
                 />
                 <h1 className="house-type">{houseType}</h1>

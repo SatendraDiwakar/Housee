@@ -5,7 +5,7 @@ import { RiHomeLine } from 'react-icons/all'
 import './loader.css'
 
 export default function Loader({ name }) {
-    
+
     // state
     const [unload, setUnload] = useState(); // state for showing and hiding preloader
     const [notFirstTimeLoad, setNotFirstTimeLoad] = useState(true); // state to check first time preloader is used
@@ -16,6 +16,7 @@ export default function Loader({ name }) {
 
     // adding animation on route change
     const anim = useCallback(() => {
+
         if (name === "/") {
             document.getElementsByClassName('home-container')[0].classList.add('animate');
             document.getElementsByClassName('carousel')[0].classList.add('animate');
@@ -33,7 +34,9 @@ export default function Loader({ name }) {
             document.getElementsByClassName('single-house-head')[0].classList.add('animate');
             document.getElementsByClassName('carousel')[0].classList.add('animate');
         }
+
     }, [name])
+
 
     // Used to check if loader is loaded for 1st time or not
     if (notFirstTimeLoad) {
@@ -47,19 +50,24 @@ export default function Loader({ name }) {
     // It also checks that this loader component will unmount before state change or not
     // to prevent memory leak error
     useEffect(() => {
+
         let isMounted = true;
-        setTimeout(() => {
-            if (isMounted && (!loading)) {
-                setUnload(() => {
-                    return {
-                        display: "none"
-                    }
-                });
-                document.getElementsByTagName('html')[0].style.overflow = "unset";
-                anim();
-                setNotFirstTimeLoad(false);
-            }
-        }, 2000)
+
+        if (isMounted) {
+            setTimeout(() => {
+                if (isMounted && (!loading)) {
+                    setUnload(() => {
+                        return {
+                            display: "none"
+                        }
+                    });
+                    document.getElementsByTagName('html')[0].style.overflow = "initial";
+                    anim();
+                    setNotFirstTimeLoad(false);
+                }
+            }, 2000)
+        }
+
         return () => {
             isMounted = false
         };

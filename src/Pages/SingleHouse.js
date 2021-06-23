@@ -21,7 +21,7 @@ export default function Singlehouse({ match }) {
     if (!loading) {
         id = parseInt(match.params.id) - 1;
         heroHouse = {
-            height: "80vh",
+            height: "75vh",
             background: `url("${houses[id].houseImage}") center no-repeat fixed`,
             backgroundSize: "cover"
         }

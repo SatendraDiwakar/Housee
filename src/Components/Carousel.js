@@ -12,7 +12,7 @@ export default function Carousel({ interior, carouStyle }) {
     let maxRange;
 
     const [i, setI] = useState(0); // state to change carousel image on clicking
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0); // Used to hide previous image before slide
 
     // carousel arrow styling conditionaly based on white/black background
     if (!carouStyle) {
@@ -21,12 +21,12 @@ export default function Carousel({ interior, carouStyle }) {
 
     if (!loading) {
         maxRange = ((0 - (inter.length - 1)) * 100); // setting a range for number of elements in carousel
-        setTimeout(() => {
 
+        if (document.getElementsByClassName('carousel')[0]) {
             document.getElementsByClassName('carousel-img')[count].style.visibility = "visible"
             // using translateX property to translate the div which contains all images
             document.getElementsByClassName('carousel-img-container')[0].style.transform = `translateX(${i}%)`
-        }, 10)
+        }
     }
 
     // forward image logic
@@ -55,7 +55,6 @@ export default function Carousel({ interior, carouStyle }) {
 
     // backward image logic
     function down() {
-        console.log(count);
         setI(prevI => {
             if (count === 0) {
                 setCount(() => {
@@ -87,7 +86,7 @@ export default function Carousel({ interior, carouStyle }) {
                             return <img
                                 key={index}
                                 src={itm}
-                                alt="Featured House"
+                                alt="Featured House Room"
                                 className="carousel-img"
                                 onClick={up}
                             />

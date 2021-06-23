@@ -8,8 +8,7 @@ import Contact from './Pages/Contact'
 import Error from './Pages/Error'
 
 function App() {
-  return (
-    <div>      
+  return (   
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/houses/" exact component={Houses} />
@@ -18,7 +17,6 @@ function App() {
         <Route path="/contact/" component={Contact} />
         <Route component={Error} />
       </Switch>
-    </div>
   );
 }
 

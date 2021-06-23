@@ -19,7 +19,7 @@ export default function Houses({ location }) {
 
     // Dynamic styling of hero
     const heroHouse = {
-        height: "80vh",
+        height: "75vh",
         background: `url("${housesHero}") center no-repeat fixed`,
         backgroundSize: "cover"
     }
@@ -66,7 +66,7 @@ export default function Houses({ location }) {
                                                 });
                                             }
                                         }
-                                    }, 10)
+                                    }, 100)
                                 }
                             }
                         }
@@ -101,30 +101,32 @@ export default function Houses({ location }) {
     return <div>
         {/* preloader used for every path change  */}
         <Loader name={location.pathname} />
-        <div style={heroHouse} className="houses-cent">
+        <section style={heroHouse} className="houses-cent">
             <Navbar housesStyle="house-nav" />
             <div className="houses-head">
                 <p className="main-heading tagline">Our beautiful houses</p>
                 <div className="line"></div>
                 <p className="sub-heading">Made with Love</p>
             </div>
-        </div>
-        <div className="house-head">
-            <div className="house-heading">Find your housee</div>
-            <div className="line"></div>
-        </div>
-        <div className="houses">
-            {getHouse.map(item => {
-                return <House
-                    key={item.id}
-                    houseImage={item.houseImage}
-                    houseType={item.houseType}
-                    rentPrice={item.price}
-                    rating={item.rating}
-                    itemNo={item.id}
-                />
-            })}
-        </div>
+        </section>
+        <section>
+            <div className="house-head">
+                <div className="house-heading">Find your housee</div>
+                <div className="line"></div>
+            </div>
+            <div className="houses">
+                {getHouse.map(item => {
+                    return <House
+                        key={item.id}
+                        houseImage={item.houseImage}
+                        houseType={item.houseType}
+                        rentPrice={item.price}
+                        rating={item.rating}
+                        itemNo={item.id}
+                    />
+                })}
+            </div>
+        </section>
     </div>
 
 }
